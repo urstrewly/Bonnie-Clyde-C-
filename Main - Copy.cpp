@@ -2,6 +2,10 @@
 #include <iostream>
 #include <string>
 
+#include "Header.h"
+#include <iostream>
+#include <string>
+
 void main()
 {
 	int choice;
@@ -9,16 +13,20 @@ void main()
 	std::cout << "Welcome choose your player!" << std::endl;
 	std::cout << "1. Bonnie" << std::endl;
 	std::cout << "2. Clyde" << std::endl;
-	std::cin >> choice;
 
-	if (choice == 1) {
-		testing.bonnie();
+
+	while (1) {
+		std::cin >> choice;
+		if (choice == 1) {
+			testing.bonnie();
+			break;
+		}
+		else if (choice == 2) {
+			testing.clyde();
+			break;
+		}
+		else {
+			std::cout << "Error wrong choice" << std::endl;
+		}
 	}
-	else if (choice == 2) {
-		testing.clyde();
-	}
-	else {
-		std::cout << "Error wrong choice" << std::endl;
-	}
-	
 }
